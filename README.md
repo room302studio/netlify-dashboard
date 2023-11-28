@@ -1,5 +1,6 @@
 # Netlify Dashboard
 
+<img width="885" alt="Screenshot 2023-11-28 at 11 34 12 AM" src="https://github.com/room302studio/netlify-dashboard/assets/530073/71f84103-463b-470e-b155-2865e333d1a2">
 
 ## Setup
 
