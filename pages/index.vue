@@ -7,22 +7,20 @@
 
         <!-- a list of just the builds with errors -->
         <h2>Builds with Errors</h2>
-        <div class="flex flex-wrap">
-          <div class="grid grid-cols-4 gap-4">
+        <div class="flex flex-wrap space-y-2">
+          <div class="md:grid md:grid-cols-4 gap-4 space-y-2">
             <UCard v-for="site in sitesWithBuildErrors" :key="site.id" class="site-item">
               <!-- the name of the site -->
-              <h2 class="text-xl my-2">{{ site.name }}</h2>
+              <h2 class="text-xl my-2 text-primary-800 dark:text-primary-200">{{ site.name }}</h2>
               <!-- details on the build error -->
               <p><strong>Latest Deploy Status:</strong> <span :class="{ 'error': site.deploys[0].state !== 'ready' }">{{
-                site.deploys[0].state }}</span></p>
+        site.deploys[0].state }}</span></p>
               <p v-if="site.deploys[0].state !== 'ready'">⚠️ Build Issue!</p>
-              <p><strong>Deploy Log:</strong> <a :href="site.deploys[0].log_access_attributes.url" target="_blank">View
-                  Logs</a></p>
 
               <!-- the linked github repo, if available -->
               <p v-if="site.build_settings.public_repo">
                 <a :href="site.build_settings.repo_url" target="_blank" class="text-xs font-mono">{{
-                  site.build_settings.repo_url }}</a>
+        site.build_settings.repo_url }}</a>
               </p>
             </UCard>
           </div>
@@ -41,11 +39,10 @@
 
               <!-- Display the latest deploy status -->
               <div v-if="site.deploys && site.deploys.length">
-                <p><strong>Latest Deploy Status:</strong> <span :class="{ 'error': site.deploys[0].state !== 'ready' }">{{
-                  site.deploys[0].state }}</span></p>
+                <p><strong>Latest Deploy Status:</strong> <span
+                    :class="{ 'error': site.deploys[0].state !== 'ready' }">{{
+        site.deploys[0].state }}</span></p>
                 <p v-if="site.deploys[0].state !== 'ready'">⚠️ Build Issue!</p>
-                <p><strong>Deploy Log:</strong> <a :href="site.deploys[0].log_access_attributes.url" target="_blank">View
-                    Logs</a></p>
               </div>
 
               <h3>{{ site.custom_domain }}</h3>
