@@ -1,5 +1,5 @@
 [build]
-  command = "nuxi generate"
+  command = "npm run generate"
   publish = "dist"
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=8192"
